@@ -1,0 +1,61 @@
+# Conversion to YML from Properties formar report
+# Warnings:
+# - The yml file had comments which are lost in the refactoring!
+spring:
+  application:
+    name: BootProj08-MiniProject-Profiles
+  profiles:
+    active: dev
+---
+#Define dev profile
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///deepak
+    username: root
+    password: Deepakkumar@rana
+    type: org.apache.tomcat.jdbc.pool.DataSource
+    
+---
+#Define test profile
+spring:
+  config:
+    activate:
+     on-profile: test
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///deepak
+    username: root
+    password: Deepakkumar@rana
+    type: com.mchange.v2.c3p0.ComboPooledDataSource
+---
+#Define uat profile
+spring:
+ config:
+   activate:
+     on-profile: uat
+ datasource:
+   driver-class-name: oracle.jdbc.OracleDriver
+   url: jdbc:oracle:thin:@localhost:1521:orcl   
+   username: USER1
+   password: USER1
+   type: oracle.ucp.jdbc.PoolDataSourceImpl
+
+---
+#Define prod profile
+spring:
+  config:
+   activate:
+      on-profile: prod
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:orcl   
+    username: USER1
+    password: USER1   
+    
+    
+              
+      
