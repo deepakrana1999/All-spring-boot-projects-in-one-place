@@ -1,0 +1,54 @@
+#spring application name
+spring:
+ application:
+   name: BootProj06-BulkInjectionUsing-ConfigurationProperties
+ config:
+     import: com/nt/commons/info.properties
+#pertional information
+#simple properties
+per:
+  info:
+    name: "rajesh"
+    addrs: "hyd"
+    mobileno: 999999
+    age: 60
+    salary: 5000
+
+#for Array value Annotaion
+#per.info.nick-names[0]=raju
+#per.info.nick-names[1]=bujji
+#per.info.nick-names[2]=deepak
+
+#for Arrays
+    nickNames: [china1,rajio1,buji1]
+    
+    #index based takes more priority
+    nick-names:
+     - "raji"
+     - "bujji" 
+     - "chinna"
+
+#for List
+    friends:
+     - "srinu"
+     - "ramu"
+     - "tarun"
+
+#for Set
+    phones:
+     - 999999
+     - 888888
+     - 777777
+#for Map
+    idDetails:
+      aadhar: 948784
+      pan: 8888888
+      voter: 5463784
+
+#HAS-A properties
+    comp: 
+     name: "raja"
+     location: "hyd"
+     size: 300
+     
+    
